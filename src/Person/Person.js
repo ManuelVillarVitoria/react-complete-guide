@@ -1,11 +1,11 @@
 import React from 'react'
 
-const person = () =>{
+const person = (props) =>{
 
-    return <p> I'm a person and I am {Math.floor(Math.random() * 30)} years old! </p>
-    
+    return <p> I'm {props.name} and I am {props.age} years old! </p>
+
     /***Ponemos las llaves delante del método Math, para que 
-    el jsx no lo interprete como TextDecoder, sino como un javascript***/
+    el jsx no lo interprete como un texto, sino como un javascript***/
 
 
 }; 

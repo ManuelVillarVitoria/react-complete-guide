@@ -38,9 +38,9 @@ import Person from './Person/Person';
           <h1> Hi, I'm React App </h1>
           <p>This is really working</p>
 
-          <Person/> 
-          <Person/> 
-          <Person/> 
+          <Person name="Max" age="28"/> 
+          <Person name="Manu" age="29"> My hobbies:Racing </Person> 
+          <Person name="Stephanie" age="26"/> 
           
         </div> 
         
