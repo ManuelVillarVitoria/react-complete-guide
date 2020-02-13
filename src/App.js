@@ -39,7 +39,7 @@ import Person from './Person/Person';
           <p>This is really working</p>
 
           <Person name="Max" age="28"/> 
-          <Person name="Manu" age="29"> My hobbies:Racing </Person> 
+          <Person name="Manu" age="29"> My hobbies:  Racing </Person> 
           <Person name="Stephanie" age="26"/> 
           
         </div> 
