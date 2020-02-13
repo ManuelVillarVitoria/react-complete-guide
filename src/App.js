@@ -16,6 +16,16 @@ import Person from './Person/Person';
 
     switchNameHandler = () =>{
       console.log ("was clicked!");
+      //DON'T DO THIS: this.state.persons[0].name = "Maximilian"
+
+      this.setState({
+
+        persons:[
+          {name: 'Maximilian', age: 28 },      
+          {name: 'Manu', age: 29 },
+          {name: 'Sthepanie', age: 27 }    
+         ]
+      })
     }
 
 
