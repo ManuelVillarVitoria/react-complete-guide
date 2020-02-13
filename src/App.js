@@ -1,6 +1,7 @@
 //import React from 'react';
 import React,{ Component } from 'react';
 import './App.css';
+import Person from './Person/Person';
 
 //function App() {
 
@@ -36,7 +37,13 @@ import './App.css';
         <div className="App">
           <h1> Hi, I'm React App </h1>
           <p>This is really working</p>
+
+          <Person/> 
+          
         </div> 
+        
+        /*** colocando el componente <Person/> que hemos importado, 
+        mostramos el texto que figura en el archivo Person.js ***/  
       );
 
 
