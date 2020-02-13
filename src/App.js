@@ -39,6 +39,8 @@ import Person from './Person/Person';
           <p>This is really working</p>
 
           <Person/> 
+          <Person/> 
+          <Person/> 
           
         </div> 
         
