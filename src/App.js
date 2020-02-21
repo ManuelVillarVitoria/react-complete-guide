@@ -17,16 +17,29 @@ class App extends Component {
     showPersons:false
   }
 
-  nameChangedHandler = (event) => {
+  nameChangedHandler = (event, id) => {
+    const personIndex = this.state.persons.findIndex(p => {
+      return p.id === id; 
+    }); 
 
-    this.setState( {
-      persons: [
-        { name: 'Max', age: 28 },
-        { name: event.target.value, age: 29 },
-        { name: 'Stephanie', age: 26 }
-      ]
-    } )
-  }
+    const person = {
+      ...this.state.persons[personIndex]
+    };
+
+    /***Aquí vemos una alternativa menos moderna para 
+    hacer lo mismo que con "..." ***/
+
+    //const person = Object.assign({}, this.state.persons[personIndex]);
+    
+    person.name = event.target.value;
+
+    const persons = [...this.state.persons];
+    persons[personIndex] = person;
+
+    this.setState( {persons: persons} )
+
+    } 
+  
 
   deletePersonHandler = (personIndex) => {
 
@@ -37,7 +50,8 @@ class App extends Component {
 
     const persons = [...this.state.persons];
     persons.splice(personIndex, 1);
-    this.setState({persons: persons});
+
+    this.setState({ persons: persons })
   }
 
   togglePersonsHandler = () => {
@@ -67,7 +81,9 @@ class App extends Component {
               click= {() => this.deletePersonHandler(index)}
               name= {person.name}
               age= {person.age}
-              key= {person.id}/>
+              key= {person.id}
+              changed= {(event) => this.nameChangedHandler(event, person.id)}
+              />
           })}
         </div> 
       );
@@ -91,6 +107,8 @@ class App extends Component {
     );
     // return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Does this work now?'));
   }
+
 }
+
 
 export default App;
