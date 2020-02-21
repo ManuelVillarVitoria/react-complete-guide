@@ -30,7 +30,12 @@ class App extends Component {
 
   deletePersonHandler = (personIndex) => {
 
-    const persons = this.state.persons;
+    //const persons = this.state.persons.slice();
+
+    /***Ahora mostramos un método similar al "slice()" 
+    pero más moderno (ES6) que es "[...   ]"***/
+
+    const persons = [...this.state.persons];
     persons.splice(personIndex, 1);
     this.setState({persons: persons});
   }
