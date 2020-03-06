@@ -35,10 +35,10 @@ const Cockpit= ( props ) => {
         btnClass = classes.Red;
     }
  
-    if (props.persons.length <=2){
+    if (props.personsLength <=2){
       assignedClasses.push(classes.red); // classes = ['red']
     }
-    if (props.persons.length <=1){
+    if (props.personsLength <=1){
       assignedClasses.push(classes.bold); // classes = ['red', 'bold']
     }
 
@@ -53,7 +53,14 @@ const Cockpit= ( props ) => {
         </div>
              
     );
-
+    
 };
-
-export default Cockpit;
+/*****
+El React.memo memoriza lo que has renderizado antes y evita que se repita de nuevo
+si la propiedad no cambia. Por tanto el mensaje que vemos abajo que sale
+en la consola del navegador ya no se repite cuando modificamos el texto
+dentro de cada componente Person:
+[Cockpit.js] cleanup work in 2nd useEffect
+[Cockpit.js] 2nd useEffect
+******/
+export default React.memo(Cockpit);
